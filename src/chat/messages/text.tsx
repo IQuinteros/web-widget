@@ -6,6 +6,7 @@ export default class TextType extends MessageType {
     render(props: IMessageTypeProps) {
         const message = props.message;
         const attachment = message.attachment;
+        const additionalParams = message.additionalParameters;
 
         const textObject = { __html: message.text };
 
@@ -34,6 +35,14 @@ export default class TextType extends MessageType {
                     >
                         <source src={attachment.url} type="video/mp4" />
                     </video>
+                ) : (
+                    ""
+                )}
+                {attachment && attachment.type === "location" ? (
+                    <div>
+                        LOCATION HERE,
+                        { additionalParams.latitude }
+                    </div>
                 ) : (
                     ""
                 )}
