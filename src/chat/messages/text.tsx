@@ -6,12 +6,18 @@ export default class TextType extends MessageType {
     render(props: IMessageTypeProps) {
         const message = props.message;
         const attachment = message.attachment;
+        const additionalParameters = message.additionalParameters;
 
         const textObject = { __html: message.text };
 
         return (
             <div>
-                <p dangerouslySetInnerHTML={textObject} />
+                
+                {additionalParameters != null && additionalParameters.link? (
+                    <a href={additionalParameters.link} target="_blank"><p dangerouslySetInnerHTML={textObject}/></a>
+                ) : (
+                    <p dangerouslySetInnerHTML={textObject} />
+                )}
 
                 {attachment && attachment.type === "image" ? (
                     <img src={attachment.url} style="max-width: 100%;" />
