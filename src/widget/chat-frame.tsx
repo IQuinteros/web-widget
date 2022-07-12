@@ -3,6 +3,11 @@ import { IConfiguration } from '../typings';
 
 export default class ChatFrame extends Component<any, any> {
 
+    constructor(){
+        super();
+
+    }
+
     shouldComponentUpdate() {
         // do not re-render via diff:
         return false;

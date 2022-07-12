@@ -110,7 +110,9 @@ export const desktopClosedMessageAvatarStyle = {
 };
 
 export const mobileClosedMessageAvatarStyle = {
-    display: 'block',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     position: 'absolute',
     top: '46px',
     right: '20px',

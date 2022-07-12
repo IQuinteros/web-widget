@@ -7,6 +7,7 @@ export default class Api {
 
     constructor(widget: Widget) {
         this.widget = widget;
+
     }
 
     open() {

@@ -33,6 +33,10 @@ export default class MessageHolder extends Component<IMessageHolderProps, any> {
         this.scrollToBottom();
     }
 
+    constructor(){
+        super();
+    }
+
     messageVisibilityChange = (message: IMessage, messageState: IMessageTypeState) => {
         const msg = this.props.message;
         if (msg.id === message.id && msg.visible !== messageState.visible) {

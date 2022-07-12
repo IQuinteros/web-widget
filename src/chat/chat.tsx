@@ -20,6 +20,8 @@ export default class Chat extends Component<IChatProps, IChatState> {
         //this.state.replyType = ReplyType.Text;
         this.setState({ messages : [] });
         this.setState({ replyType : ReplyType.Text });
+
+        //alert(this.props.bootbox);
     }
 
     componentDidMount() {
@@ -27,7 +29,8 @@ export default class Chat extends Component<IChatProps, IChatState> {
             this.writeToMessages({
                 text: this.props.conf.introMessage,
                 type: "text",
-                from: "chatbot"
+                from: "chatbot",
+                bootbox: this.props.bootbox
             });
         }
         // Add event listener for widget API
@@ -44,7 +47,8 @@ export default class Chat extends Component<IChatProps, IChatState> {
         this.writeToMessages({
             text,
             type: "text",
-            from: "chatbot"
+            from: "chatbot",
+            bootbox: (window as any).bootbox
         });
     }
 
@@ -52,7 +56,8 @@ export default class Chat extends Component<IChatProps, IChatState> {
         const message: IMessage = {
             text,
             type: "text",
-            from: "visitor"
+            from: "visitor",
+            bootbox: (window as any).bootbox
         };
 
         // Send a message from the html user to the server
@@ -212,7 +217,8 @@ export default class Chat extends Component<IChatProps, IChatState> {
 
 interface IChatProps {
     userId: string,
-    conf: IConfiguration
+    conf: IConfiguration,
+    bootbox: any
 }
 
 enum ReplyType {

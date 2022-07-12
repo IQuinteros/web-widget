@@ -10,6 +10,11 @@ import MessageHolder from "./message-holder";
 
 export default class MessageArea extends Component<IMessageAreaProps, any> {
 
+    constructor(){
+        super();
+
+    }
+
     render(props: IMessageAreaProps, {}) {
     	const styleChat = 'height:'+(props.conf.wrapperHeight-60)+'px;';
 
@@ -40,4 +45,5 @@ interface IMessageAreaProps {
 	conf: IConfiguration,
 	messages: IMessage[],
 	messageHandler: Function,
+
 };

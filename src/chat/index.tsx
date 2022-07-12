@@ -24,10 +24,13 @@ function injectChat() {
     root.id = 'botmanChatRoot';
     document.getElementsByTagName('body')[0].appendChild(root);
 
+    //alert((window as any).botmanChatWidget);
+
     render(
         <Chat
             userId={conf.userId}
             conf={conf}
+            bootbox={'xd'}
         />,
         root
     );

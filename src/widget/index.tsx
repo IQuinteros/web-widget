@@ -25,6 +25,8 @@ function generateRandomId() {
 }
 
 function injectChat() {
+    //(window as any)
+
     let root = document.createElement('div');
     root.id = 'botmanWidgetRoot';
     document.getElementsByTagName('body')[0].appendChild(root);

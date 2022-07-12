@@ -12,7 +12,9 @@ export default abstract class MessageType extends Component<IMessageTypeProps, I
         };
     }
 
-    onVisibilityChange = () => {};
+    onVisibilityChange = () => {
+
+    };
 
     /**
      * Check if we have a timeout
