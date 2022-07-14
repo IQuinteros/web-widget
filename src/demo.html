@@ -40,6 +40,7 @@
             height: 80vh;
             /*background:url('https://raw.githubusercontent.com/jpchateau/Interactive-Image/master/docs/_static/background.jpg');*/
         }
+
     </style>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/interactiveimagejs@2.7.1/dist/interactive-image.min.css" />
@@ -63,16 +64,23 @@
 
 
 <script>
+    saveUserId = (userId) => sessionStorage.setItem('userId', userId);
+
     var botmanWidget = {
         frameEndpoint: './chat.html',
-        title: "BioBioBotsy",
+        title: "MOBIUS",
         chatServer: "http://127.0.0.1:8000/botman",
         introMessage: "Hola! Soy un bot que te puede guiar! Si tienes alguna duda solo escribe 'Hola'",
-        mainColor: "#65ab2e",
-        bubbleBackground: "#65ab2e",
+        mainColor: "#8CBA51",
+        bubbleBackground: "#8CBA51",
+        headerTextColor: "#FFF",
         desktopHeight: 450,
         desktopWidth: 400,
-        aboutText: "BioBioRecicla"
+        aboutText: "Powered by ChatFlow",
+        aboutLink: "https://biobiorecicla.cl",
+        placeholderText: "Escribe un mensaje...",
+        echoChannel: (userId) => saveUserId(userId),
+        userId: sessionStorage.getItem('userId')
     };
 </script>
 <script id="botmanWidget" src='js/widget.js'></script>

@@ -85,6 +85,7 @@ export interface IConfiguration {
      * The title to use in the widget header.
      */
     title: string,
+    subtitle: string,
     /**
      * How many days is the cookie valid?
      */

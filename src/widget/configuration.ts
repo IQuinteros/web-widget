@@ -6,6 +6,7 @@ export const defaultConfiguration: IConfiguration = {
     timeFormat: 'HH:MM',
     dateTimeFormat: 'm/d/yy HH:MM',
     title: 'Experian Help',
+    subtitle: 'Testing',
     cookieValidInDays: 1,
     introMessage: '',
     placeholderText: 'Send a message...',

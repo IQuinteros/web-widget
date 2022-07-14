@@ -1,10 +1,9 @@
-
 export const desktopWrapperStyle = {
     position: 'fixed',
     bottom: '20px',
     right: '20px',
     zIndex: 1000000000,
-    borderRadius: '5px',
+    borderRadius: '15px 15px 5px 5px',
     boxSizing: 'content-box',
     boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.2)',
     overflow: 'hidden'
@@ -46,7 +45,8 @@ export const mobileOpenWrapperStyle = {
 };
 
 export const desktopTitleStyle = {
-    height: '40px',
+    height: '50px',
+    width: '100%',
     lineHeight: '30px',
     fontSize: '20px',
     display: 'flex',
@@ -58,6 +58,37 @@ export const desktopTitleStyle = {
     boxSizing: 'content-box',
     mozBoxSizing: 'content-box',
     webkitBoxSizing: 'content-box'
+};
+
+export const chatHeaderDivStyle = {
+    display: 'grid',
+    gridTemplateAreas: '"logo title close" "logo subtitle close"',
+    gridTemplateColumns: '80px 1fr 20px',
+    width: '100%'
+};
+
+export const headerLogoStyle = {
+    zIndex: '1',
+    gridArea: 'logo',
+    position: 'absolute',
+    width: '80px',
+    left: '10px',
+    top: '5px'
+};
+
+export const headerTitleStyle = {
+    fontFamily: 'LemonMilkFont, Lato, sans-serif',
+    fontSize: '20px',
+    fontWeight: '500',
+    marginBottom: '0',
+    gridArea: 'title'
+};
+
+export const headerSubtitleStyle = {
+    fontFamily: 'QuestrialFont, Lato, sans-serif',
+    fontSize: '14px',
+    marginBottom: '0',
+    gridArea: 'subtitle'
 };
 
 export const mobileTitleStyle = {

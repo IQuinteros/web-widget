@@ -10,7 +10,11 @@ import {
     desktopWrapperStyle,
     mobileOpenWrapperStyle,
     mobileClosedWrapperStyle,
-    desktopClosedWrapperStyleChat
+    desktopClosedWrapperStyleChat,
+    chatHeaderDivStyle,
+    headerTitleStyle,
+    headerSubtitleStyle,
+    headerLogoStyle
 } from './style';
 import {IConfiguration, IMessage} from '../typings';
 import Echo from "laravel-echo";
@@ -92,6 +96,16 @@ export default class Widget extends Component<any, IWidgetState> {
             .modal-backdrop&#123;
                 z-index: 1000000001;
             &#125;
+
+            @font-face &#123;
+                font-family: QuestrialFont;
+                src: url(assets/fonts/questrial/Questrial-Regular.ttf);
+                &#125;
+
+            @font-face &#123;
+                font-family: LemonMilkFont;
+                src: url(assets/fonts/lemon_milk/LEMONMILK-Regular.otf);
+                &#125;
             </style>
 
                 {/* Open/close button */}
@@ -106,11 +120,17 @@ export default class Widget extends Component<any, IWidgetState> {
                             <div style={{background: conf.mainColor, ...desktopTitleStyle}} onClick={this.toggle}>
                                 <div style={{
                                     display: 'flex', alignItems: 'center', padding: '0px 30px 0px 0px',
-                                    fontSize: '15px', fontWeight: 'normal', color: conf.headerTextColor
+                                    fontSize: '15px', fontWeight: 'normal', color: conf.headerTextColor,
+                                    width: '100%'
                                 }}>
-                                    {conf.title}
+                                    <div style={chatHeaderDivStyle}>
+                                        <img src="assets/img/headerlogo.png" style={headerLogoStyle}/>
+                                        <h1 style={headerTitleStyle}>{conf.title}</h1>
+                                        <h2 style={headerSubtitleStyle}>{conf.subtitle}</h2>
+                                        <ArrowIcon isOpened={isChatOpen}/>
+                                    </div>
+
                                 </div>
-                                <ArrowIcon isOpened={isChatOpen}/>
                             </div> : <ChatTitleMsg onClick={this.toggle} conf={conf}/>)
                         :
                         <ChatTitleMsg onClick={this.toggle} conf={conf}/>
