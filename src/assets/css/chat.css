@@ -185,6 +185,11 @@ html, body {
     width: 100%;
     height: 100%;
 }
+.inputgrid > button:hover{
+    border-radius: 50%;
+    box-shadow: 0 -6px 12px 0px rgba(235,235,235,0.95);
+    transition: 0.4s;
+}
 
 .textarea:focus + .inputgrid {
     /*background: white;*/
