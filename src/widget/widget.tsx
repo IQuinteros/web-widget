@@ -85,6 +85,15 @@ export default class Widget extends Component<any, IWidgetState> {
 
             <div style={wrapperStyle}>
 
+            <style>
+            .interactiveImgStyle&#123;
+                z-index: 1100000000;
+            &#125;
+            .modal-backdrop&#123;
+                z-index: 1000000001;
+            &#125;
+            </style>
+
                 {/* Open/close button */}
                 {(isMobile || conf.alwaysUseFloatingButton) && !isChatOpen ?
 

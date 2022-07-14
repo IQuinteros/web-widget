@@ -19,36 +19,14 @@ export default class TextType extends MessageType {
 
         const textObject = { __html: message.text };
 
-        const bootbox = message.bootbox;
-        //alert(bootbox);
+        let messageItems:any = [];
+        if(additionalParameters != null) if(additionalParameters.imgItems != null) messageItems = additionalParameters.imgItems;
 
         let onImageClicked = () => {
-            var items = [
-                {
-                    type: "text",
-                    title: "Fur",
-                    description: "The fur of clouded leopards is...",
-                    position: {
-                        left: 100,
-                        top: 50
-                    },
-                    sticky: true
-                },
-                {
-                    type: "text",
-                    title: "Fur",
-                    description: "The fur of clouded leopards is...",
-                    position: {
-                        left: 300,
-                        top: 140
-                    },
-                    link: {
-                        url: 'https://www.google.cl',
-                        label: 'Google'
-                    },
-                    sticky: true
-                }
-            ];
+            let items = messageItems === null? [] : messageItems;
+            items = Object.keys(items).map((key) => items[key]);
+            parent.window.console.log(items);
+
 
             const newWindowObject = window as any;
             //alert(newWindowObject);
@@ -59,8 +37,8 @@ export default class TextType extends MessageType {
             }
 
             const styleInteractiveDiv = {
-                width: 'fit-content',
-                height: '60vh',
+                width: 'auto',
+                /*maxHeight: '60vh',*/
                 overflow: 'auto'
             };
 
@@ -77,7 +55,10 @@ export default class TextType extends MessageType {
                 message: interactiveImageString,
                 closeButton: true,
                 title: 'Puntos de reciclaje comuna de Concepción',
-                size: 'extra-large'
+                size: 'extra-large',
+                className: 'interactiveImgStyle',
+                onEscape: true,
+                backdrop: true
             });
             let imageOptions = {
                 shareBox: false
