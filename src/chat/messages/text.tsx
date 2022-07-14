@@ -79,7 +79,7 @@ export default class TextType extends MessageType {
 
                 {attachment && attachment.type === "image" ? (
                     <div>
-                        <button onClick={onImageClicked}><img src={attachment.url} style="max-width: 100%;" /></button>
+                        <button onClick={onImageClicked} class="btn"><img src={attachment.url} style="max-width: 100%;" /></button>
                     </div>
                 ) : (
                     ""
