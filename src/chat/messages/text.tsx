@@ -20,7 +20,11 @@ export default class TextType extends MessageType {
         const textObject = { __html: message.text };
 
         let messageItems:any = [];
-        if(additionalParameters != null) if(additionalParameters.imgItems != null) messageItems = additionalParameters.imgItems;
+        let imageTitle:string = '';
+        if(additionalParameters != null) {
+            if(additionalParameters.imgItems != null) messageItems = additionalParameters.imgItems;
+            if(additionalParameters.imgTitle != null) imageTitle = additionalParameters.imgTitle;
+        }
 
         let onImageClicked = () => {
             let items = messageItems === null? [] : messageItems;
@@ -43,7 +47,7 @@ export default class TextType extends MessageType {
             };
 
             const styleInteractiveImage = {
-                height: '100%',
+                height: '720px',
             };
 
             let interactiveImage = <div style={interactiveParent}><div id="my-interactive-image" style={styleInteractiveDiv}>
@@ -54,8 +58,8 @@ export default class TextType extends MessageType {
             newWindowObject.parent.bootbox.dialog({
                 message: interactiveImageString,
                 closeButton: true,
-                title: 'Puntos de reciclaje comuna de Concepción',
-                size: 'extra-large',
+                title: imageTitle,
+                size: 'large',
                 className: 'interactiveImgStyle',
                 onEscape: true,
                 backdrop: true
