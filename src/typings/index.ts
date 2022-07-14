@@ -36,8 +36,7 @@ export interface IMessage {
     attachment?: IAttachment,
     globalButtons?: IButton[],
     additionalParameters?: any,
-    elements?: IElement[],
-    bootbox: any
+    elements?: IElement[]
 }
 
 export interface IAttachment {

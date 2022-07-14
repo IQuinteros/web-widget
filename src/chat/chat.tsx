@@ -29,8 +29,7 @@ export default class Chat extends Component<IChatProps, IChatState> {
             this.writeToMessages({
                 text: this.props.conf.introMessage,
                 type: "text",
-                from: "chatbot",
-                bootbox: this.props.bootbox
+                from: "chatbot"
             });
         }
         // Add event listener for widget API
@@ -47,8 +46,7 @@ export default class Chat extends Component<IChatProps, IChatState> {
         this.writeToMessages({
             text,
             type: "text",
-            from: "chatbot",
-            bootbox: (window as any).bootbox
+            from: "chatbot"
         });
     }
 
@@ -56,8 +54,7 @@ export default class Chat extends Component<IChatProps, IChatState> {
         const message: IMessage = {
             text,
             type: "text",
-            from: "visitor",
-            bootbox: (window as any).bootbox
+            from: "visitor"
         };
 
         // Send a message from the html user to the server
