@@ -65,7 +65,8 @@ export default class TextType extends MessageType {
                 backdrop: true
             });
             let imageOptions = {
-                shareBox: false
+                shareBox: false,
+                triggerEvent: "click"
             };
 
             (newWindowObject.parent.$("#my-interactive-image") as any).interactiveImage(items, imageOptions);

@@ -42,8 +42,9 @@
         }
 
         .interactive-image .hotspot, .interactive-image .icon-radio-checked{
-            color: #8cba51 !important;
+            color: white !important;
             text-shadow: 0 0 5px rgb(1 1 1 / 20%);
+            display: block !important;
         }
 
     </style>
@@ -85,7 +86,7 @@
         aboutLink: "https://biobiorecicla.cl",
         placeholderText: "Escribe un mensaje...",
         echoChannel: (userId) => saveUserId(userId),
-        userId: sessionStorage.getItem('userId'),
+        //userId: sessionStorage.getItem('userId'),
         subtitle: 'Asistente inteligente'
     };
 </script>
